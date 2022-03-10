@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faCheck, faMap, faEnvelope, faBullhorn, faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
 import { Link} from "react-router-dom";
 import { useSetRecoilState , useRecoilValue} from "recoil";
-
 import { isDarkAtom } from "../atom";
+
 const Container = styled.div`
 background-color:${props=>props.theme.boxColor} ;
 height:100vh ;
@@ -23,7 +23,7 @@ text-transform:uppercase ;
 const Title = styled.div`
 display:flex ;
 svg{
-color:yellow;
+color:${props=>props.theme.accentColor};
 margin-right:20px ;
 }
 `;
@@ -45,10 +45,10 @@ border-radius: 30px;
 &:hover {
 background-color:${props=>props.theme.accentColor} ;
 color:${props=>props.theme.boxColor} ;
+transform:scale(1.5) ;
 }
 span{
   margin-right:10px ;
-  
 }
 `;
 const ControllDots = keyframes`

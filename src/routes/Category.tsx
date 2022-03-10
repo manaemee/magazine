@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { useState } from "react";
 import { fetchNews } from "../api";
-import styled  ,{ keyframes } from "styled-components";
+import styled ,{ keyframes } from "styled-components";
 import { Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight , faSpinner} from "@fortawesome/free-solid-svg-icons";
-
+import {Helmet} from "react-helmet";
 
 const loadingSpin = keyframes`
 100% { 
@@ -132,7 +132,8 @@ function Category(){
     return (
         <>
         {isLoading ? <Laoding><FontAwesomeIcon icon={faSpinner} /></Laoding> :     
-         <Container>   
+         <Container>
+           <Helmet><title>magazine</title></Helmet>
             <Link to="/"><Header>today's paper</Header></Link>
             <Header>{category}</Header>
             <Menu>
