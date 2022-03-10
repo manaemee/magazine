@@ -1,25 +1,31 @@
 import styled  ,{ keyframes }from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faCheck, faMap, faEnvelope, faBullhorn} from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faCheck, faMap, faEnvelope, faBullhorn, faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
 import { Link} from "react-router-dom";
+import { useSetRecoilState , useRecoilValue} from "recoil";
+
+import { isDarkAtom } from "../atom";
 const Container = styled.div`
 background-color:${props=>props.theme.boxColor} ;
 height:100vh ;
 `;
 const Header = styled.header`
 display:flex ;
+justify-content:space-between ;
 padding:5vh  ;
 font-size:22px ;
 border-bottom: 1px solid ${props=>props.theme.bgandtextColor};
 `;
-const Title = styled.h1`
+const H1 = styled.h1`
 font-weight: 600;
 text-transform:uppercase ;
 `
-const Icon = styled.div`
+const Title = styled.div`
+display:flex ;
+svg{
 color:yellow;
 margin-right:20px ;
-
+}
 `;
 const Main = styled.div`
 display:flex ;
@@ -75,10 +81,7 @@ padding:20px 30px;
 background-color: ${props=>props.theme.hoverColor};
 margin-right: 10px;
 border-radius:50% ;
-animation:${ControllDots} 2s infinite;
-&:first-child{
- 
-}
+animation:${ControllDots} 4s infinite;
 &:nth-child(2){
   animation-delay: 0.5s;
 }
@@ -88,28 +91,30 @@ animation:${ControllDots} 2s infinite;
 }
 `;
 function Overview(){
- 
+  const isDark = useRecoilValue(isDarkAtom)
+  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
     return (
       <Container>
       <Header>
-      <Icon><FontAwesomeIcon icon={faGlobe}/></Icon>
-        <Title>
+      <Title>
+        <FontAwesomeIcon icon={faGlobe}/>
+        <H1>
          Global Issue Magazine
-        </Title>
+        </H1>
+      </Title>
+        <span onClick={toggleDarkAtom}>{isDark ? <FontAwesomeIcon icon={faSun}/> :<FontAwesomeIcon icon={faMoon}/> }</span>
       </Header>
       <Main>
-      <Subtitle>
-
-      Find the latest breaking news and information on the top stories.
-
-      </Subtitle>
+        <Subtitle>
+        Find the latest breaking news and information on the top stories.
+        </Subtitle>
       <Link to="all">
       <Button>
         <span>Start Now</span>
         <FontAwesomeIcon icon={faCheck}/>
       </Button>
       </Link>
-     
       </Main>
       <Footer>
         <span><FontAwesomeIcon icon={faMap}/></span>

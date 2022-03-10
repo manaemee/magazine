@@ -16,7 +16,7 @@ const loadingSpin = keyframes`
 const Laoding = styled.div`
 height:100vh ;
   svg{
-    color: red;
+    color: ${props=>props.theme.accentColor};
     animation: ${loadingSpin} 1s infinite;
     font-size:50vh ;
   }

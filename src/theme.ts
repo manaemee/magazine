@@ -8,8 +8,8 @@ export const darkTheme:DefaultTheme = {
 }
 
 export const lightTheme:DefaultTheme = {
-    bgandtextColor:"#E3E6F5",
-    boxColor:"#000000",
-    hoverColor:"#2FDB9B",
-    accentColor:"#ffea00",
+    bgandtextColor:"#1E222B",
+    boxColor:"#DADADC",
+    hoverColor:"#2EDC9B",
+    accentColor:"#6477EC",
 }
