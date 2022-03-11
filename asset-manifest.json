@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/tech-magazine/static/js/main.7c4f4d8f.js",
+    "main.js": "/tech-magazine/static/js/main.124a929b.js",
     "index.html": "/tech-magazine/index.html",
-    "main.7c4f4d8f.js.map": "/tech-magazine/static/js/main.7c4f4d8f.js.map"
+    "main.124a929b.js.map": "/tech-magazine/static/js/main.124a929b.js.map"
   },
   "entrypoints": [
-    "static/js/main.7c4f4d8f.js"
+    "static/js/main.124a929b.js"
   ]
 }
