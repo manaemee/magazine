@@ -7,7 +7,7 @@ function Router(){
     return(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Home/>}></Route>
+            <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}></Route>
             <Route path="/:category" element={<Category/>}></Route>
             <Route path="/:category/:index" element={<Detail/>}></Route>
         </Routes>

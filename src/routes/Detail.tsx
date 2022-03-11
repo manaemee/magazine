@@ -86,7 +86,7 @@ function Detail(){
                 <Micro>
                     <span>{array?.author}</span>
                     <span>{array?.date}</span>
-                   {array?.readMoreUrl ? <a href={array?.readMoreUrl} target="_blank">Read More</a> : undefined}
+                   {array?.readMoreUrl ? <a href={array?.readMoreUrl} rel="noreferrer" target="_blank">Read More</a> : undefined}
                 </Micro>
             </Main>
         </Container>
